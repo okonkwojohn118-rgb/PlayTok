@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101018">
+<title>PlayTok — Watch. Play. Chat. Create.</title>
+<style>
+:root{--bg:#0d0d14;--panel:#171722;--panel2:#202031;--text:#f7f7fb;--muted:#a7a7b8;--pink:#ff3d81;--blue:#55d9ff;--line:#303044}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+button,input,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:10px 14px;background:var(--panel2);color:var(--text)}button:hover{filter:brightness(1.15)}.primary{background:linear-gradient(110deg,var(--pink),#9857ff);font-weight:700}.app{min-height:100vh}.topbar{height:68px;position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:18px;padding:0 22px;background:#101018ed;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.logo{font-size:24px;font-weight:900;letter-spacing:-1px}.logo span{color:var(--pink)}.search{flex:1;max-width:520px;margin:auto}.search input{width:100%;padding:12px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--text);outline:none}.top-actions{display:flex;gap:8px}.layout{display:grid;grid-template-columns:205px minmax(0,1fr) 260px;gap:22px;max-width:1440px;margin:auto;padding:22px}.sidebar,.rightbar{position:sticky;top:90px;align-self:start}.nav{display:grid;gap:8px}.nav button{display:flex;align-items:center;gap:12px;text-align:left;background:transparent;padding:13px}.nav button.active,.nav button:hover{background:var(--panel2)}.nav .ico{width:24px;font-size:19px;text-align:center}.side-note,.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px}.side-note{margin-top:18px;color:var(--muted);font-size:13px;line-height:1.5}.content{min-width:0}.hero{padding:25px;border-radius:22px;background:radial-gradient(circle at 85% 15%,#7732a5 0,transparent 34%),linear-gradient(120deg,#20203a,#151521);border:1px solid #34304e;margin-bottom:20px}.eyebrow{color:var(--blue);text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:2px}.hero h1{font-size:clamp(28px,4vw,44px);line-height:1.04;margin:10px 0}.hero p{color:#c5c5d4;max-width:520px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:22px 0 12px}.section-head h2{margin:0;font-size:20px}.muted{color:var(--muted)}.video-grid,.game-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.video-card,.game-card{overflow:hidden;border:1px solid var(--line);background:var(--panel);border-radius:16px}.video-thumb{height:185px;display:flex;align-items:center;justify-content:center;text-align:center;padding:15px;background:linear-gradient(140deg,#6c246e,#e64d75);position:relative;font-size:25px;font-weight:900}.video-thumb.blue{background:linear-gradient(140deg,#155b7b,#4d49a7)}.video-thumb.orange{background:linear-gradient(140deg,#9b4a18,#dc3c68)}.duration{position:absolute;right:10px;bottom:10px;border-radius:6px;background:#000b;padding:4px 7px;font-size:12px}.video-info{padding:13px}.video-info h3{font-size:15px;margin:0 0 7px}.meta{color:var(--muted);font-size:12px}.video-actions{display:flex;gap:8px;margin-top:12px}.video-actions button{font-size:12px;padding:8px 10px}.game-card{padding:14px}.game-art{height:120px;border-radius:12px;display:grid;place-items:center;font-size:44px;background:linear-gradient(130deg,#1d6675,#6940a4);margin-bottom:12px}.game-card h3{margin:0 0 6px}.game-card p{color:var(--muted);font-size:13px;min-height:38px}.progress{height:7px;background:#303044;border-radius:99px;overflow:hidden;margin:10px 0}.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--pink),var(--blue));width:0}.profile-row{display:flex;align-items:center;gap:12px}.avatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(140deg,var(--pink),#744dff);font-weight:800}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:15px}.stat{background:var(--panel2);padding:10px;border-radius:12px;text-align:center}.stat strong{display:block;font-size:18px}.stat small{font-size:11px;color:var(--muted)}.rightbar .card{margin-bottom:14px}.rightbar h3{margin:0 0 12px;font-size:15px}.reward-number{font-size:28px;font-weight:900}.small{font-size:12px;color:var(--muted);line-height:1.5}.content-view{display:none}.content-view.active{display:block}.empty{padding:32px;text-align:center;border:1px dashed var(--line);border-radius:16px;color:var(--muted)}.field{display:grid;gap:7px;margin:12px 0}.field label{font-size:13px;color:var(--muted)}.field input,.field textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--text)}.field textarea{min-height:90px;resize:vertical}.message-list{display:grid;gap:10px}.message{background:var(--panel2);padding:12px;border-radius:12px;max-width:85%}.message.mine{margin-left:auto;background:#54316b}.chat-compose{display:flex;gap:8px;margin-top:14px}.chat-compose input{min-width:0;flex:1;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--text)}.game-stage{background:#101018;border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:420px;margin:18px auto}.tile{height:85px;background:#26263a;border:1px solid #44445c;border-radius:10px;font-size:24px}.tile:active{background:var(--pink)}.runner{height:180px;max-width:520px;margin:14px auto;border-radius:14px;background:linear-gradient(#172b4d,#16202c);position:relative;overflow:hidden}.runner:before{content:"";position:absolute;left:25%;right:25%;height:100%;border-left:3px dashed #9ca3af;border-right:3px dashed #9ca3af}.runner-player{position:absolute;bottom:18px;left:48%;font-size:30px}.runner-obstacle{position:absolute;top:22px;left:48%;font-size:25px}.footer{text-align:center;color:var(--muted);font-size:12px;padding:24px}.notice{padding:12px;border-radius:12px;background:#25233a;color:#d7d4ff;font-size:13px;margin:12px 0}.mobile-nav{display:none}
+@media(max-width:1050px){.layout{grid-template-columns:175px minmax(0,1fr)}.rightbar{display:none}}
+@media(max-width:700px){.topbar{padding:0 13px;height:60px;gap:10px}.logo{font-size:21px}.top-actions .optional{display:none}.layout{display:block;padding:13px;padding-bottom:80px}.sidebar{display:none}.hero{padding:20px}.video-grid,.game-grid{grid-template-columns:1fr 1fr;gap:10px}.video-thumb{height:145px;font-size:20px}.video-info{padding:10px}.video-actions{flex-wrap:wrap}.mobile-nav{display:flex;position:fixed;z-index:8;bottom:0;left:0;right:0;justify-content:space-around;background:#11111bf5;border-top:1px solid var(--line);padding:8px 3px calc(8px + env(safe-area-inset-bottom))}.mobile-nav button{display:grid;gap:3px;justify-items:center;padding:5px 8px;background:transparent;font-size:10px}.mobile-nav span{font-size:19px}.stat-grid{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="logo">Play<span>Tok</span></div>
+  <div class="search"><input id="searchInput" placeholder="Search comedy, games, creators..." aria-label="Search PlayTok"></div>
+  <div class="top-actions"><button class="optional" onclick="showView('upload')">＋ Upload</button><button class="primary" onclick="showView('profile')">My profile</button></div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <nav class="nav" id="desktopNav">
+      <button class="active" data-view="home" onclick="showView('home')"><span class="ico">⌂</span> Home</button>
+      <button data-view="comedy" onclick="showView('comedy')"><span class="ico">▶</span> Comedy videos</button>
+      <button data-view="games" onclick="showView('games')"><span class="ico">🎮</span> Games</button>
+      <button data-view="messages" onclick="showView('messages')"><span class="ico">💬</span> Messages</button>
+      <button data-view="upload" onclick="showView('upload')"><span class="ico">＋</span> Upload video</button>
+      <button data-view="profile" onclick="showView('profile')"><span class="ico">◎</span> My profile</button>
+    </nav>
+    <div class="side-note"><strong>PlayTok community</strong><br>Keep it funny, creative, and respectful. Report harmful content and only upload videos you have permission to share.</div>
+  </aside>
+
+  <main class="content">
+    <section id="view-home" class="content-view active">
+      <div class="hero">
+        <div class="eyebrow">Your world of entertainment</div>
+        <h1>Watch. Play.<br>Chat. Create.</h1>
+        <p>Discover short comedy, challenge your high score, and connect with your community — all in one place.</p>
+        <div class="hero-actions"><button class="primary" onclick="showView('comedy')">▶ Watch comedy</button><button onclick="showView('games')">🎮 Explore games</button><button onclick="showView('upload')">＋ Create video</button></div>
+      </div>
+      <div class="section-head"><h2>Trending comedy</h2><button onclick="showView('comedy')">See all →</button></div>
+      <div class="video-grid" id="homeVideos"></div>
+      <div class="section-head"><h2>Play something</h2><button onclick="showView('games')">All games →</button></div>
+      <div class="game-grid" id="homeGames"></div>
+    </section>
+
+    <section id="view-comedy" class="content-view">
+      <div class="section-head"><h2>😂 Short comedy movies</h2><span class="muted">Maximum 3:00</span></div>
+      <p class="muted">Watch funny moments, support creators, and share the laughs.</p>
+      <div class="video-grid" id="comedyVideos"></div>
+      <div class="notice">Demo note: sample cards are placeholders. Uploaded videos stay in this browser prototype only; a real public feed needs video storage and a backend.</div>
+    </section>
+
+    <section id="view-games" class="content-view">
+      <div class="section-head"><h2>🎮 Games</h2><span class="muted">Mini-game demos</span></div>
+      <div class="game-grid" id="allGames"></div>
+      <div id="gamePlayArea"></div>
+    </section>
+
+    <section id="view-messages" class="content-view">
+      <div class="section-head"><h2>💬 Messages</h2><span class="muted">Demo chat</span></div>
+      <div class="card">
+        <div class="profile-row"><div class="avatar">T</div><div><strong>PlayTok Demo Chat</strong><div class="small">Messages shown only in this browser demo</div></div></div>
+        <hr style="border-color:var(--line);margin:16px 0">
+        <div class="message-list" id="messageList"><div class="message">Welcome to PlayTok! 👋</div><div class="message">Share your favourite comedy with friends.</div></div>
+        <form class="chat-compose" id="chatForm"><input id="chatInput" maxlength="500" placeholder="Write a message..." required><button class="primary">Send</button></form>
+        <div class="notice">Real messages, voice calls, and video calls need user accounts, secure server-side storage, and a real-time calling service. This demo does not connect different users.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button onclick="alert('Voice calling will be added when a real calling service is connected.')">📞 Voice call</button><button onclick="alert('Video calling will be added when a real calling service is connected.')">📹 Video call</button></div>
+      </div>
+    </section>
+
+    <section id="view-upload" class="content-view">
+      <div class="section-head"><h2>＋ Upload comedy video</h2><span class="muted">Up to 3 minutes</span></div>
+      <div class="card">
+        <div class="notice">Choose a video up to 180 seconds long. In this prototype, it is previewed locally and is not uploaded to a public server.</div>
+        <form id="uploadForm">
+          <div class="field"><label for="videoTitle">Video title</label><input id="videoTitle" maxlength="80" placeholder="e.g. When Mum Checks Your Phone" required></div>
+          <div class="field"><label for="videoCreator">Creator name</label><input id="videoCreator" maxlength="40" placeholder="Your creator name" required></div>
+          <div class="field"><label for="videoFile">Select video file</label><input id="videoFile" type="file" accept="video/*" required></div>
+          <div id="uploadPreview"></div>
+          <button class="primary" type="submit">Preview my video</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="view-profile" class="content-view">
+      <div class="section-head"><h2>👤 Creator profile</h2><span class="muted">Demo profile</span></div>
+      <div class="card">
+        <div class="profile-row"><div class="avatar">Y</div><div><h2 style="margin:0">Your PlayTok Profile</h2><div class="muted">Comedy creator · New member</div></div></div>
+        <div class="stat-grid"><div class="stat"><strong id="followersCount">120</strong><small>Followers</small></div><div class="stat"><strong id="likesCount">1.2K</strong><small>Likes</small></div><div class="stat"><strong>0</strong><small>Videos</small></div></div>
+        <div class="section-head"><h3>Creator rewards</h3><span class="muted">Eligibility goal</span></div>
+        <div class="reward-number"><span id="followerProgress">120</span> / 5,000 followers</div>
+        <div class="progress"><span id="rewardBar"></span></div>
+        <p class="small">Reach 5,000 followers to meet the proposed eligibility threshold. Actual payouts will depend on verified engagement, published rules, available revenue, and payment setup. No money is paid by this demo.</p>
+        <button onclick="addDemoFollowers()">＋ Add demo followers</button>
+      </div>
+    </section>
+  </main>
+
+  <aside class="rightbar">
+    <div class="card"><h3>💰 Creator progress</h3><div class="reward-number"><span id="sideFollowers">120</span></div><div class="small">followers toward 5,000</div><div class="progress"><span id="sideBar"></span></div><button class="primary" style="width:100%" onclick="showView('profile')">View rewards</button></div>
+    <div class="card"><h3>🔥 Popular games</h3><p class="small">Runner Dash<br>Piano Tap<br>Coin Quest</p><button style="width:100%" onclick="showView('games')">Play games</button></div>
+    <div class="card"><h3>🛡️ Community safety</h3><p class="small">Be kind. Share original content. Never share passwords or private information.</p></div>
+  </aside>
+</div>
+<nav class="mobile-nav">
+  <button onclick="showView('home')"><span>⌂</span>Home</button>
+  <button onclick="showView('comedy')"><span>▶</span>Comedy</button>
+  <button onclick="showView('games')"><span>🎮</span>Games</button>
+  <button onclick="showView('messages')"><span>💬</span>Chat</button>
+  <button onclick="showView('profile')"><span>◎</span>Profile</button>
+</nav>
+<div class="footer">PlayTok prototype · Watch. Play. Chat. Create. · Built as a starter project</div>
+</div>
+<script>
+const videos=[
+ {title:"When Mum Says 'Come Here'",creator:"NaijaLaughs",duration:"02:35",views:"12.4K views",likes:840,style:"",emoji:"😂",desc:"A classic family comedy moment."},
+ {title:"The Friend Who Never Pays",creator:"FunnyBros",duration:"01:48",views:"8.1K views",likes:520,style:"blue",emoji:"💸",desc:"Every group has one friend like this."},
+ {title:"POV: Your First Day at Work",creator:"AdaComedy",duration:"02:59",views:"6.7K views",likes:430,style:"orange",emoji:"😅",desc:"A short workplace comedy."},
+ {title:"When Network Disappears",creator:"StreetSkits",duration:"01:22",views:"5.2K views",likes:315,style:"blue",emoji:"📱",desc:"The struggle is real."}
+];
+const games=[
+ {id:"runner",title:"Runner Dash",emoji:"🏃",desc:"Dodge obstacles and see how long you can run."},
+ {id:"piano",title:"Piano Tap",emoji:"🎹",desc:"Tap the glowing keys and build your score."},
+ {id:"coins",title:"Coin Quest",emoji:"🪙",desc:"Tap to collect coins in this simple mini-game."},
+ {id:"fruit",title:"Fruit Pop",emoji:"🍉",desc:"Tap the fruit to score points."}
+];
+let liked=new Set(), followed=new Set(), followers=120, userVideos=[], coinScore=0, runnerScore=0, pianoScore=0;
+function videoCard(v,i){return `<article class="video-card" data-search="${(v.title+' '+v.creator).toLowerCase()}"><div class="video-thumb ${v.style||''}">${v.emoji}<div class="duration">${v.duration}</div></div><div class="video-info"><h3>${escapeHTML(v.title)}</h3><div class="meta">@${escapeHTML(v.creator)} · ${v.views||'New video'}</div><p class="small">${escapeHTML(v.desc||'Creator video')}</p><div class="video-actions"><button onclick="likeVideo(${i})">❤️ <span id="likes-${i}">${v.likes||0}</span></button><button onclick="followCreator('${escapeJS(v.creator)}')">＋ Follow</button><button onclick="shareVideo('${escapeJS(v.title)}')">↗ Share</button></div></div></article>`}
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function escapeJS(s){return String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'")}
+function renderVideos(){let all=[...videos,...userVideos];document.getElementById('homeVideos').innerHTML=all.slice(0,2).map(videoCard).join('');document.getElementById('comedyVideos').innerHTML=all.map(videoCard).join('')}
+function gameCard(g){return `<article class="game-card"><div class="game-art">${g.emoji}</div><h3>${g.title}</h3><p>${g.desc}</p><button class="primary" onclick="playGame('${g.id}')">Play now →</button></article>`}
+function renderGames(){document.getElementById('homeGames').innerHTML=games.slice(0,2).map(gameCard).join('');document.getElementById('allGames').innerHTML=games.map(gameCard).join('')}
+function showView(view){document.querySelectorAll('.content-view').forEach(s=>s.classList.remove('active'));let el=document.getElementById('view-'+view);if(el)el.classList.add('active');document.querySelectorAll('#desktopNav button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));window.scrollTo({top:0,behavior:'smooth'})}
+function likeVideo(i){if(liked.has(i)){liked.delete(i);videos[i%videos.length].likes=Math.max(0,(videos[i%videos.length].likes||0)-1)}else{liked.add(i);let v=[...videos,...userVideos][i];if(v)v.likes=(v.likes||0)+1}renderVideos()}
+function followCreator(name){if(!followed.has(name)){followed.add(name);alert('You are now following @'+name+' in this demo!')}else alert('You already follow @'+name+' in this demo.')}
+function shareVideo(title){if(navigator.share)navigator.share({title:'PlayTok: '+title,text:'Check out this comedy on PlayTok!'}).catch(()=>{});else if(navigator.clipboard)navigator.clipboard.writeText(title+' — PlayTok').then(()=>alert('Video title copied!')).catch(()=>alert('Share: '+title));else alert('Share: '+title)}
+function updateFollowers(){document.getElementById('followersCount').textContent=followers.toLocaleString();document.getElementById('followerProgress').textContent=followers.toLocaleString();document.getElementById('sideFollowers').textContent=followers.toLocaleString();let p=Math.min(100,followers/5000*100)+'%';document.getElementById('rewardBar').style.width=p;document.getElementById('sideBar').style.width=p}
+function addDemoFollowers(){followers=Math.min(5000,followers+100);updateFollowers();alert('Demo only: follower count increased. This does not create real followers or qualify for real payments.')}
+function playGame(id){let area=document.getElementById('gamePlayArea');if(id==='piano'){area.innerHTML=`<div class="game-stage"><h3>🎹 Piano Tap</h3><p class="muted">Tap any key to score. Try to reach 20 points!</p><h2 id="pianoScore">${pianoScore}</h2><div class="tiles">${[0,1,2,3].map((n)=>`<button class="tile" onclick="pianoTap()">♫</button>`).join('')}</div><button onclick="pianoScore=0;playGame('piano')">Restart</button></div>`}else if(id==='runner'){runnerScore=0;area.innerHTML=`<div class="game-stage"><h3>🏃 Runner Dash</h3><p class="muted">Press Jump to dodge the obstacle and score points.</p><h2 id="runnerScore">0</h2><div class="runner"><div class="runner-obstacle">🪨</div><div class="runner-player">🏃</div></div><button class="primary" onclick="runnerJump()">⬆ Jump</button> <button onclick="runnerScore=0;document.getElementById('runnerScore').textContent='0'">Restart</button></div>`}else{coinScore=0;let emoji=id==='fruit'?'🍉':'🪙';let title=id==='fruit'?'Fruit Pop':'Coin Quest';area.innerHTML=`<div class="game-stage"><h3>${emoji} ${title}</h3><p class="muted">Tap the item as many times as you can.</p><h2 id="coinScore">0</h2><button style="font-size:48px;padding:24px" onclick="coinTap()">${emoji}</button><br><button style="margin-top:12px" onclick="coinScore=0;document.getElementById('coinScore').textContent='0'">Restart</button></div>`}area.scrollIntoView({behavior:'smooth',block:'start'})}
+function pianoTap(){pianoScore++;let e=document.getElementById('pianoScore');if(e)e.textContent=pianoScore}
+function runnerJump(){runnerScore+=Math.floor(Math.random()*3)+1;let e=document.getElementById('runnerScore');if(e)e.textContent=runnerScore}
+function coinTap(){coinScore++;let e=document.getElementById('coinScore');if(e)e.textContent=coinScore}
+document.getElementById('chatForm').addEventListener('submit',e=>{e.preventDefault();let input=document.getElementById('chatInput');let msg=document.createElement('div');msg.className='message mine';msg.textContent=input.value;document.getElementById('messageList').appendChild(msg);input.value='';msg.scrollIntoView({block:'nearest'})});
+document.getElementById('videoFile').addEventListener('change',e=>{let f=e.target.files[0];let preview=document.getElementById('uploadPreview');preview.innerHTML='';if(!f)return;let v=document.createElement('video');v.controls=true;v.style='width:100%;max-height:360px;border-radius:12px;margin:10px 0';v.src=URL.createObjectURL(f);v.onloadedmetadata=()=>{if(v.duration>180){alert('This video is longer than 3 minutes. Please choose a shorter video.');e.target.value='';preview.innerHTML='';}};preview.appendChild(v)});
+document.getElementById('uploadForm').addEventListener('submit',e=>{e.preventDefault();let f=document.getElementById('videoFile').files[0];if(!f)return;let v=document.createElement('video');v.preload='metadata';v.onloadedmetadata=()=>{URL.revokeObjectURL(v.src);if(v.duration>180){alert('Videos must be 3 minutes or shorter.');return}let title=document.getElementById('videoTitle').value.trim(),creator=document.getElementById('videoCreator').value.trim();userVideos.unshift({title,creator,duration:formatTime(v.duration),views:'Local preview',likes:0,style:'blue',emoji:'🎬',desc:'Your local video preview. Not uploaded publicly.'});renderVideos();alert('Added to this page preview. To publish it for everyone, PlayTok needs a backend and video hosting.');showView('comedy')};v.src=URL.createObjectURL(f)});
+function formatTime(s){let m=Math.floor(s/60),sec=Math.floor(s%60);return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0')}
+document.getElementById('searchInput').addEventListener('input',e=>{let q=e.target.value.toLowerCase().trim();document.querySelectorAll('.video-card').forEach(c=>c.style.display=(!q||c.dataset.search.includes(q))?'':'none');if(q)showView('comedy')});
+renderVideos();renderGames();updateFollowers();
+</script>
+</body>
+</html>
